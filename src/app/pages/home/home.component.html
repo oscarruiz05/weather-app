@@ -1,0 +1,28 @@
+<div class="grid content-center justify-center items-center h-full">
+  <div class="flex flex-wrap gap-10 w-full justify-center">
+
+    @for (item of options; track $index) {
+      <div class="flex flex-col bg-white rounded-3xl shadow shadow-slate-500">
+        <div class="px-6 py-8 sm:p-10 sm:pb-6">
+          <div class="grid items-center justify-center w-full grid-cols-1 text-left">
+            <div>
+              <h2 class="text-lg font-medium tracking-tighter text-gray-600 lg:text-3xl">
+                {{ item.name }}
+              </h2>
+              <p class="mt-2 text-sm text-gray-500">{{ item.description }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex px-6 pb-8 sm:px-8">
+          <a
+            class="flex items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full nline-flex hover:cursor-pointer hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black"
+            [routerLink]="['/weather/'+item.identifier]">
+            Get Weather
+          </a>
+        </div>
+      </div>
+    }
+
+  </div>
+</div>
+

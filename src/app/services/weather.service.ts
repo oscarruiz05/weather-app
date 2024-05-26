@@ -11,7 +11,7 @@ export class WeatherService {
     private http: HttpClient
   ) { }
 
-  getWeather(identifier: 'TOP' | 'LWX'): Observable<any> {
+  getWeather(identifier: string): Observable<any> {
     return this.http.get<any>(`https://api.weather.gov/gridpoints/${identifier}/31,80/forecast`);
   }
 }
